@@ -1,6 +1,7 @@
 package com.jake.demo.dto;
 
 public class Greeting {
+
     private Long id;
     private String name;
 
@@ -24,8 +25,5 @@ public class Greeting {
     public void setName(String name) {
         this.name = name;
     }
-
-    
-
 
 }
