@@ -1,27 +1,19 @@
 package com.jake.demo.dto;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "restaurants")
 public class Resturant {
-    @Id
-    private String Id;
+
     private String name;
     private String cuisine;
 
-    public Resturant(String id, String name, String cuisine) {
-        Id = id;
+    public Resturant(String name, String cuisine) {
         this.name = name;
         this.cuisine = cuisine;
     }
 
-    public String getId() {
-        return Id;
-    }
-
     public void setId(String id) {
-        Id = id;
     }
 
     public String getName() {
