@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.jake.demo.Repository.ResturantRepository;
 
@@ -18,4 +19,10 @@ public class ResturantController {
     public List<Resturant> getAllResturants() {
         return restRepo.findAll();
     }
+
+    @GetMapping("/resturant/{name}")
+    public Resturant getSpecificResturant(@PathVariable String name) {
+        return restRepo.findRestaurantByName(name);
+    }
+
 }
