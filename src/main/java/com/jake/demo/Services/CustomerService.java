@@ -14,6 +14,9 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
+    @Autowired
+    private UtilityService utilityService;
+
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
@@ -27,6 +30,7 @@ public class CustomerService {
     }
 
     public Customer saveCustomer(Customer customer) {
+        customer.setId(utilityService.updateUtilityData("userNumber").getSum());
         return customerRepository.save(customer);
     }
 

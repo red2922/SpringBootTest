@@ -1,15 +1,19 @@
 package com.jake.demo.dto;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "customers")
 public class Customer {
+    @Id
+    private Integer id;
     private String name;
     private String phoneNumber;
     private String creditCard;
     private String address;
 
-    public Customer(String name, String phoneNumber, String creditCard, String address) {
+    public Customer(Integer id, String name, String phoneNumber, String creditCard, String address) {
+        this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.creditCard = creditCard;
@@ -46,6 +50,14 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
