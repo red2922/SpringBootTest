@@ -1,12 +1,12 @@
 package com.jake.demo.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.jake.demo.Repository.UtilityRepository;
 import com.jake.demo.dto.Utility;
 
-@Service
+@Component
 public class UtilityService {
 
     @Autowired
