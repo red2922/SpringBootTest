@@ -7,6 +7,7 @@ import com.jake.demo.dto.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jake.demo.Components.UtilityComponent;
 import com.jake.demo.Repository.CustomerRepository;
 
 @Service
@@ -15,7 +16,7 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     @Autowired
-    private UtilityService utilityService;
+    private UtilityComponent utilityComponent;
 
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
@@ -25,12 +26,11 @@ public class CustomerService {
         if (name != null) {
             name = name.substring(0, 1).toUpperCase() + name.substring(1);
         }
-
         return customerRepository.findCustomerByName(name);
     }
 
     public Customer saveCustomer(Customer customer) {
-        customer.setId(utilityService.updateUtilityData("userNumber").getSum());
+        customer.setId(utilityComponent.updateUtilityData("userNumber").getSum());
         return customerRepository.save(customer);
     }
 

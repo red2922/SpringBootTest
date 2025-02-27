@@ -1,4 +1,4 @@
-package com.jake.demo.Services;
+package com.jake.demo.Components;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -7,7 +7,7 @@ import com.jake.demo.Repository.UtilityRepository;
 import com.jake.demo.dto.Utility;
 
 @Component
-public class UtilityService {
+public class UtilityComponent {
 
     @Autowired
     private UtilityRepository utilityRepository;
