@@ -11,13 +11,15 @@ public class Customer {
     private String phoneNumber;
     private String creditCard;
     private String address;
+    private float balance;
 
-    public Customer(Integer id, String name, String phoneNumber, String creditCard, String address) {
+    public Customer(Integer id, String name, String phoneNumber, String creditCard, String address, float balance) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.creditCard = creditCard;
         this.address = address;
+        this.balance = balance;
     }
 
     public String getName() {
@@ -58,6 +60,14 @@ public class Customer {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 
 }
